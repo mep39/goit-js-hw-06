@@ -39,10 +39,15 @@ const images = [
 
 const galleryList = document.querySelector('.gallery');
 
-images.forEach(image => {
-  const addLiEl = `<li class="gallery-item"><img class="gallery-img" 
-  src="${image.url}" alt="${image.alt}"></li>`;
+// images.forEach(image => {
+//   const addLiEl = `<li class="gallery-item"><img class="gallery-img" 
+//   src="${image.url}" alt="${image.alt}"></li>`;
+
+const addLiEl = images.map((image) => 
+`<li class="gallery-item"><img class="gallery-img" 
+  src="${image.url}" alt="${image.alt}"></li>`).join("");
+
   galleryList.insertAdjacentHTML("afterbegin", addLiEl);
 
   console.log(galleryList);
-});
+// });
